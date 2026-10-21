@@ -97,22 +97,37 @@ export function ProfileCompletionModal({
       return;
     }
 
+    // If this is the user's current username, it's instantly available with no loading
+    if (user?.username && clean.toLowerCase() === user.username.toLowerCase()) {
+      setUsernameAvailable(true);
+      setUsernameError(null);
+      setIsCheckingUsername(false);
+      return;
+    }
+
     setUsernameError(null);
     setIsCheckingUsername(true);
 
     const timer = setTimeout(async () => {
-      const available = await checkUsernameAvailable(clean);
-      setIsCheckingUsername(false);
-      setUsernameAvailable(available);
-      if (!available) {
-        setUsernameError('Username is already taken. Try another!');
-      } else {
+      try {
+        const available = await checkUsernameAvailable(clean);
+        setUsernameAvailable(available);
+        if (!available) {
+          setUsernameError('Username is already taken. Try another!');
+        } else {
+          setUsernameError(null);
+        }
+      } catch {
+        // Fallback: allow submission on network hiccup
+        setUsernameAvailable(true);
         setUsernameError(null);
+      } finally {
+        setIsCheckingUsername(false);
       }
-    }, 400);
+    }, 250);
 
     return () => clearTimeout(timer);
-  }, [username, checkUsernameAvailable]);
+  }, [username, user?.username]);
 
   if (!isOpen || !user) return null;
 

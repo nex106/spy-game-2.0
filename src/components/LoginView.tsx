@@ -4,7 +4,6 @@ import { auth, googleProvider } from '../firebase.js';
 import { useGame } from '../context/GameContext.js';
 import { HorrorAudioButton } from './HorrorAudioButton.js';
 import { ThemeToggle } from './ThemeToggle.js';
-import { SpyBackground } from './SpyBackground.js';
 import { Sparkles, Gamepad2, AlertCircle, Loader2 } from 'lucide-react';
 
 export function LoginView() {
@@ -69,9 +68,7 @@ export function LoginView() {
   };
 
   return (
-    <div className="min-h-screen bg-transparent text-slate-100 flex flex-col justify-center items-center px-4 py-8 sm:py-12 relative overflow-hidden">
-      <SpyBackground />
-
+    <div className="min-h-screen bg-[#EEF2FF] dark:bg-[#0C1021] text-slate-900 dark:text-slate-100 flex flex-col justify-center items-center px-4 py-8 sm:py-12 relative overflow-hidden transition-colors duration-300">
       {/* Top Right Controls (Audio & Theme) */}
       <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
         <HorrorAudioButton />
@@ -81,7 +78,7 @@ export function LoginView() {
       <div className="w-full max-w-md relative z-10 animate-pop-in">
         {/* Cartoon Game Logo & Kicker */}
         <div className="text-center mb-5 sm:mb-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#10172e]/90 border border-indigo-700/60 rounded-full text-xs font-game font-bold text-indigo-300 mb-3 shadow-lg backdrop-blur-md">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/80 dark:bg-[#10172e]/90 border border-indigo-200 dark:border-indigo-700/60 rounded-full text-xs font-game font-bold text-indigo-600 dark:text-indigo-300 mb-3 shadow-sm backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-amber-400" />
             <span>Real-Time Multiplayer Party Game</span>
           </div>
@@ -96,13 +93,13 @@ export function LoginView() {
             </h1>
           </div>
 
-          <p className="mt-2 text-xs sm:text-sm font-medium text-slate-300 max-w-xs mx-auto drop-shadow-xs">
+          <p className="mt-2 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 max-w-xs mx-auto drop-shadow-xs">
             Find the secret impostor before the final vote!
           </p>
         </div>
 
         {/* Tactile Game Login Card */}
-        <div className="bg-[#0b1022]/85 backdrop-blur-xl border border-slate-700/60 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.65)] space-y-5">
+        <div className="bg-white dark:bg-[#10152B] border-2 border-indigo-100 dark:border-indigo-950/80 rounded-3xl p-6 sm:p-7 shadow-xl space-y-5 transition-colors duration-300">
           {error && (
             <div className="flex items-start gap-3 p-3.5 bg-rose-950/70 border border-rose-700/80 rounded-2xl text-rose-200 text-xs leading-relaxed animate-shake">
               <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />

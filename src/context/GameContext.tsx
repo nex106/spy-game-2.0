@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
+import React, { createContext, useContext, useEffect, useRef, useState, useCallback } from 'react';
 import {
   ChatMessage,
   GameMode,
@@ -487,22 +487,26 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const checkUsernameAvailable = async (username: string): Promise<boolean> => {
-    const trimmed = username.trim();
-    if (!trimmed || trimmed.length < 3) return false;
-    try {
-      const res = await fetch(`/api/auth/check-username?username=${encodeURIComponent(trimmed)}`, {
-        headers: token ? { Authorization: `Bearer ${token}` } : {},
-      });
-      if (res.ok) {
-        const data = await res.json();
-        return Boolean(data.available);
+  const checkUsernameAvailable = useCallback(
+    async (usernameToCheck: string): Promise<boolean> => {
+      const trimmed = usernameToCheck.trim();
+      if (!trimmed || trimmed.length < 3) return false;
+      if (user && user.username.toLowerCase() === trimmed.toLowerCase()) return true;
+      try {
+        const res = await fetch(`/api/auth/check-username?username=${encodeURIComponent(trimmed)}`, {
+          headers: token ? { Authorization: `Bearer ${token}` } : {},
+        });
+        if (res.ok) {
+          const data = await res.json();
+          return Boolean(data.available);
+        }
+        return true;
+      } catch {
+        return true;
       }
-      return false;
-    } catch {
-      return false;
-    }
-  };
+    },
+    [token, user]
+  );
 
   const login = async (username: string, password: string) => {
     try {

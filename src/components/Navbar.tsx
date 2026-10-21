@@ -34,23 +34,23 @@ export function Navbar({ onOpenHostDashboard, onOpenProfileModal }: NavbarProps)
     user.username.toLowerCase() === 'nafiul';
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 dark:bg-[#0F1426]/95 backdrop-blur-md border-b-2 border-indigo-100 dark:border-indigo-950/80 shadow-xs transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-2.5 sm:px-6 h-16 flex items-center justify-between gap-1.5 sm:gap-4">
+    <header className="sticky top-0 z-40 w-full max-w-full bg-white/95 dark:bg-[#0F1426]/95 backdrop-blur-md border-b-2 border-indigo-100 dark:border-indigo-950/80 shadow-xs transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 h-16 flex items-center justify-between gap-1.5 sm:gap-4">
         {/* Zone 1 (Left): Logo + Player Profile & Avatar + Logout + Host Panel */}
-        <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+        <div className="flex items-center gap-1 sm:gap-2.5 shrink-0">
           {/* Cartoon Game Wordmark */}
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-2xl bg-gradient-to-br from-rose-500 to-amber-500 flex items-center justify-center text-white shadow-sm border-2 border-white/40 dark:border-white/20 transform -rotate-3 hover:rotate-0 transition-transform">
               <Gamepad2 className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
 
-            <span className="font-game text-base sm:text-2xl font-black tracking-wide uppercase bg-clip-text text-transparent bg-gradient-to-r from-rose-500 via-amber-400 to-cyan-400 drop-shadow-xs">
+            <span className="font-game text-sm sm:text-2xl font-black tracking-wide uppercase bg-clip-text text-transparent bg-gradient-to-r from-rose-500 via-amber-400 to-cyan-400 drop-shadow-xs hidden min-[440px]:inline">
               SPY GAME
             </span>
           </div>
 
           {/* Divider */}
-          <div className="h-6 w-px bg-slate-200 dark:bg-slate-800 mx-0.5 hidden min-[400px]:block" />
+          <div className="h-6 w-px bg-slate-200 dark:bg-slate-800 mx-0.5 hidden min-[480px]:block" />
 
           {/* Player Profile & Avatar Button (Moved to Left) */}
           <button

@@ -17,7 +17,7 @@ app.use(express.json());
 const activeSessions = new Map<string, UserProfile>();
 
 function createSession(user: UserProfile): string {
-  const token = `tok_${crypto.randomBytes(24).toString('hex')}`;
+  const token = `tok_${user.id}_${crypto.randomBytes(16).toString('hex')}`;
   activeSessions.set(token, user);
   return token;
 }
@@ -26,7 +26,25 @@ function getUserFromReq(req: Request): UserProfile | null {
   const authHeader = req.headers.authorization;
   if (!authHeader) return null;
   const token = authHeader.replace(/^Bearer\s+/, '').trim();
-  return activeSessions.get(token) || null;
+  if (!token) return null;
+
+  const inMem = activeSessions.get(token);
+  if (inMem) return inMem;
+
+  // Fallback: recover session from token encoding if server restarted
+  if (token.startsWith('tok_')) {
+    const parts = token.split('_');
+    if (parts.length >= 3) {
+      const userId = parts[1];
+      const found = db.getUserById(userId);
+      if (found) {
+        activeSessions.set(token, found);
+        return found;
+      }
+    }
+  }
+
+  return null;
 }
 
 export function isHostOrAdmin(user?: UserProfile | null): boolean {
@@ -278,7 +296,17 @@ wss.on('connection', (ws) => {
       const parsed: WebSocketClientMessage = JSON.parse(data.toString());
 
       if (parsed.type === 'AUTH') {
-        const user = activeSessions.get(parsed.token);
+        let user = activeSessions.get(parsed.token);
+        if (!user && parsed.token?.startsWith('tok_')) {
+          const parts = parsed.token.split('_');
+          if (parts.length >= 3) {
+            const found = db.getUserById(parts[1]);
+            if (found) {
+              user = found;
+              activeSessions.set(parsed.token, user);
+            }
+          }
+        }
         if (user) {
           session.user = user;
           ws.send(JSON.stringify({ type: 'AUTH_SUCCESS', user }));
