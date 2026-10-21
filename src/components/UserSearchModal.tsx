@@ -58,20 +58,20 @@ export function UserSearchModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-4 pt-16 sm:pt-4 bg-slate-950/70 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white dark:bg-[#151B33] border-2 border-indigo-200 dark:border-indigo-900 rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl relative animate-pop-in">
+    <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-4 pt-16 sm:pt-4 bg-black/80 backdrop-blur-md animate-fade-in">
+      <div className="bg-[#0b1022]/95 backdrop-blur-2xl border border-slate-700/80 rounded-3xl max-w-lg w-full overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.85)] relative animate-pop-in">
         {/* Header */}
-        <div className="px-5 py-4 bg-slate-50 dark:bg-[#10152B] border-b-2 border-indigo-100 dark:border-indigo-950 flex items-center justify-between">
+        <div className="px-5 py-4 bg-[#0f162e] border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-500 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
               <Search className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="font-game font-black text-sm uppercase text-slate-800 dark:text-white leading-tight">
+              <h2 className="font-game font-black text-sm uppercase text-white leading-tight">
                 Search Players
               </h2>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400">
-                ইউজারনেম লিখে প্লেয়ার খুঁজুন ও প্রোফাইল দেখুন
+              <p className="text-[11px] text-slate-400">
+                Search players by username & view profiles
               </p>
             </div>
           </div>
@@ -80,14 +80,14 @@ export function UserSearchModal({
               soundFX.playClick();
               onClose();
             }}
-            className="w-8 h-8 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 flex items-center justify-center cursor-pointer transition-colors"
+            className="w-8 h-8 rounded-full hover:bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center cursor-pointer transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
         {/* Search Input Bar */}
-        <div className="p-4 border-b border-indigo-100 dark:border-indigo-950 bg-white dark:bg-[#151B33]">
+        <div className="p-4 border-b border-slate-800 bg-[#0c1226]">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
               <Search className="w-4 h-4" />

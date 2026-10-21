@@ -4,6 +4,7 @@ import { auth, googleProvider } from '../firebase.js';
 import { useGame } from '../context/GameContext.js';
 import { HorrorAudioButton } from './HorrorAudioButton.js';
 import { ThemeToggle } from './ThemeToggle.js';
+import { SpyBackground } from './SpyBackground.js';
 import { Sparkles, Gamepad2, AlertCircle, Loader2 } from 'lucide-react';
 
 export function LoginView() {
@@ -68,55 +69,52 @@ export function LoginView() {
   };
 
   return (
-    <div className="min-h-screen bg-[#EEF2FF] dark:bg-[#0C1021] text-slate-900 dark:text-slate-100 flex flex-col justify-center items-center px-4 py-8 sm:py-12 relative overflow-hidden transition-colors duration-300">
+    <div className="min-h-screen bg-transparent text-slate-100 flex flex-col justify-center items-center px-4 py-8 sm:py-12 relative overflow-hidden">
+      <SpyBackground />
+
       {/* Top Right Controls (Audio & Theme) */}
       <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
         <HorrorAudioButton />
         <ThemeToggle />
       </div>
 
-      {/* Playful background ambient glow */}
-      <div className="absolute top-1/4 -left-32 w-80 h-80 bg-rose-400/15 dark:bg-rose-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-cyan-400/15 dark:bg-cyan-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-violet-400/10 dark:bg-violet-600/10 rounded-full blur-3xl pointer-events-none" />
-
       <div className="w-full max-w-md relative z-10 animate-pop-in">
         {/* Cartoon Game Logo & Kicker */}
         <div className="text-center mb-5 sm:mb-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/90 dark:bg-[#161B33] border-2 border-indigo-200 dark:border-indigo-800/80 rounded-full text-xs font-game font-bold text-indigo-600 dark:text-indigo-300 mb-3 shadow-xs">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#10172e]/90 border border-indigo-700/60 rounded-full text-xs font-game font-bold text-indigo-300 mb-3 shadow-lg backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-amber-400" />
             <span>Real-Time Multiplayer Party Game</span>
           </div>
 
           {/* Big Cartoon Game Title with Icon */}
           <div className="flex items-center justify-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-500 via-amber-400 to-cyan-400 flex items-center justify-center text-white shadow-md border-2 border-white/60 dark:border-white/20 transform -rotate-6">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-500 via-amber-400 to-cyan-400 flex items-center justify-center text-white shadow-lg border-2 border-white/20 transform -rotate-6">
               <Gamepad2 className="w-7 h-7" />
             </div>
-            <h1 className="text-4xl sm:text-5xl font-black font-game tracking-wider uppercase bg-clip-text text-transparent bg-gradient-to-r from-rose-500 via-amber-400 to-cyan-400 drop-shadow-xs">
+            <h1 className="text-4xl sm:text-5xl font-black font-game tracking-wider uppercase bg-clip-text text-transparent bg-gradient-to-r from-rose-500 via-amber-400 to-cyan-400 drop-shadow-md">
               SPY GAME
             </h1>
           </div>
 
-          <p className="mt-2 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 max-w-xs mx-auto">
+          <p className="mt-2 text-xs sm:text-sm font-medium text-slate-300 max-w-xs mx-auto drop-shadow-xs">
             Find the secret impostor before the final vote!
           </p>
         </div>
 
         {/* Tactile Game Login Card */}
-        <div className="bg-white dark:bg-[#151B33] border-2 border-indigo-100 dark:border-indigo-900/60 rounded-3xl p-6 sm:p-7 shadow-[0_12px_24px_rgba(15,23,42,0.08)] dark:shadow-[0_16px_32px_rgba(0,0,0,0.4)] transition-colors duration-300 space-y-5">
+        <div className="bg-[#0b1022]/85 backdrop-blur-xl border border-slate-700/60 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.65)] space-y-5">
           {error && (
-            <div className="flex items-start gap-3 p-3.5 bg-rose-50 dark:bg-rose-950/60 border-2 border-rose-200 dark:border-rose-800 rounded-2xl text-rose-700 dark:text-rose-200 text-xs leading-relaxed animate-shake">
-              <AlertCircle className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 p-3.5 bg-rose-950/70 border border-rose-700/80 rounded-2xl text-rose-200 text-xs leading-relaxed animate-shake">
+              <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
               <span>{error}</span>
             </div>
           )}
 
           <div className="text-center space-y-1">
-            <h2 className="font-game font-black text-lg text-slate-900 dark:text-white uppercase tracking-wide">
+            <h2 className="font-game font-black text-lg text-white uppercase tracking-wide">
               Sign In To Play
             </h2>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
+            <p className="text-xs text-slate-400">
               Continue with Google to create or join multiplayer rooms
             </p>
           </div>
@@ -126,7 +124,7 @@ export function LoginView() {
             type="button"
             onClick={handleGoogleSignIn}
             disabled={isSigningIn}
-            className="w-full py-3.5 px-5 bg-white dark:bg-[#1E2540] hover:bg-slate-50 dark:hover:bg-[#252E4F] border-2 border-slate-300 dark:border-indigo-800/80 rounded-2xl font-game font-black text-sm text-slate-800 dark:text-white shadow-[0_4px_0_#CBD5E1] dark:shadow-[0_4px_0_#0F172A] active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-3 cursor-pointer disabled:opacity-50"
+            className="w-full py-3.5 px-5 bg-[#18203d] hover:bg-[#212b52] border border-indigo-700/60 rounded-2xl font-game font-black text-sm text-white shadow-[0_4px_0_#0a0f21] active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-3 cursor-pointer disabled:opacity-50"
           >
             {isSigningIn ? (
               <>

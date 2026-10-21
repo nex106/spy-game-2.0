@@ -197,16 +197,16 @@ export function ProfileCompletionModal({
     selectedAvatar.startsWith('data:image/');
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/70 dark:bg-black/85 backdrop-blur-md animate-pop-in overflow-y-auto">
-      <div className="w-full max-w-xl bg-white dark:bg-[#151B33] border-3 border-indigo-200 dark:border-indigo-900/80 rounded-3xl shadow-2xl overflow-hidden my-auto transition-colors duration-300">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-pop-in overflow-y-auto">
+      <div className="w-full max-w-xl bg-[#0b1022]/95 backdrop-blur-2xl border border-slate-700/80 rounded-3xl shadow-[0_24px_60px_rgba(0,0,0,0.85)] overflow-hidden my-auto transition-colors duration-300">
         {/* Header */}
-        <div className="px-6 py-4 bg-gradient-to-r from-rose-500/10 via-amber-400/10 to-cyan-400/10 dark:from-rose-500/20 dark:via-amber-400/10 dark:to-cyan-400/20 border-b-2 border-indigo-100 dark:border-indigo-950 flex items-center justify-between">
+        <div className="px-6 py-4 bg-[#0f162e] border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-rose-500 to-amber-400 text-white flex items-center justify-center font-game font-bold text-base shadow-sm">
               <Sparkles className="w-4 h-4 text-white fill-current animate-pulse" />
             </div>
             <div>
-              <h2 className="font-game font-black text-base sm:text-lg tracking-wide uppercase text-slate-900 dark:text-white">
+              <h2 className="font-game font-black text-base sm:text-lg tracking-wide uppercase text-white">
                 {user.isProfileCompleted ? 'EDIT SPY PROFILE' : 'COMPLETE YOUR SPY PROFILE'}
               </h2>
               <p className="text-xs font-medium text-slate-500 dark:text-slate-400">

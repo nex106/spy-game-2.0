@@ -51,8 +51,8 @@ export function TieResultView() {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 space-y-6 animate-pop-in">
-      <div className="bg-white dark:bg-[#151B33] border-2 border-amber-300 dark:border-amber-900/70 rounded-3xl p-6 sm:p-8 text-center shadow-[0_12px_24px_rgba(245,158,11,0.08)] dark:shadow-[0_16px_32px_rgba(0,0,0,0.35)] space-y-4 transition-colors duration-300">
-        <div className="w-14 h-14 mx-auto rounded-2xl bg-amber-100 dark:bg-amber-950/80 border-2 border-amber-400 dark:border-amber-600 flex items-center justify-center text-amber-600 dark:text-amber-400 shadow-sm animate-bounce-subtle">
+      <div className="bg-[#0b1022]/85 backdrop-blur-xl border border-amber-500/40 rounded-3xl p-6 sm:p-8 text-center shadow-[0_20px_50px_rgba(0,0,0,0.65)] space-y-4 transition-colors duration-300">
+        <div className="w-14 h-14 mx-auto rounded-2xl bg-amber-950/80 border-2 border-amber-500 flex items-center justify-center text-amber-400 shadow-md animate-bounce-subtle">
           <AlertTriangle className="w-8 h-8 stroke-[2.5]" />
         </div>
 

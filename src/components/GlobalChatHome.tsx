@@ -68,15 +68,15 @@ export function GlobalChatHome({
     <div className="max-w-5xl mx-auto px-4 py-6 sm:py-8 flex flex-col gap-6 min-h-[calc(100vh-4rem)]">
       {/* Cartoon Party Game Hero / Lobby Banner */}
       <div className="text-center flex flex-col items-center animate-pop-in">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-white/90 dark:bg-[#161B33] border-2 border-indigo-200 dark:border-indigo-800/80 rounded-full text-xs font-game font-bold text-indigo-600 dark:text-indigo-300 mb-2 shadow-xs">
-          <Gamepad2 className="w-3.5 h-3.5 text-cyan-500" />
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#10172e]/85 backdrop-blur-md border border-indigo-700/60 rounded-full text-xs font-game font-bold text-indigo-300 mb-2 shadow-md">
+          <Gamepad2 className="w-3.5 h-3.5 text-cyan-400" />
           <span>Party Game Lobby</span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black font-game tracking-wider uppercase bg-clip-text text-transparent bg-gradient-to-r from-rose-500 via-amber-400 to-cyan-400 drop-shadow-xs">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black font-game tracking-wider uppercase bg-clip-text text-transparent bg-gradient-to-r from-rose-500 via-amber-400 to-cyan-400 drop-shadow-md">
           SPY GAME
         </h1>
-        <p className="mt-1 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 max-w-md">
+        <p className="mt-1 text-xs sm:text-sm font-medium text-slate-300 max-w-md drop-shadow-xs">
           Join a party room, blend in with your crew, and sniff out the secret spy!
         </p>
 
@@ -84,7 +84,7 @@ export function GlobalChatHome({
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3 w-full max-w-xl">
           <button
             onClick={onOpenJoinModal}
-            className="flex-1 min-w-[160px] py-3.5 px-6 btn-game-coral font-game font-black text-sm tracking-wider rounded-2xl shadow-md flex items-center justify-center gap-2 cursor-pointer"
+            className="flex-1 min-w-[160px] py-3.5 px-6 btn-game-coral font-game font-black text-sm tracking-wider rounded-2xl shadow-lg flex items-center justify-center gap-2 cursor-pointer"
           >
             <LogIn className="w-4 h-4 stroke-[2.5]" />
             <span>JOIN ROOM</span>
@@ -92,7 +92,7 @@ export function GlobalChatHome({
 
           <button
             onClick={onOpenCreateModal}
-            className="flex-1 min-w-[160px] py-3.5 px-6 btn-game-amber font-game font-black text-sm tracking-wider rounded-2xl shadow-md flex items-center justify-center gap-2 cursor-pointer"
+            className="flex-1 min-w-[160px] py-3.5 px-6 btn-game-amber font-game font-black text-sm tracking-wider rounded-2xl shadow-lg flex items-center justify-center gap-2 cursor-pointer"
           >
             <PlusCircle className="w-4 h-4 stroke-[2.5]" />
             <span>CREATE ROOM</span>
@@ -101,7 +101,7 @@ export function GlobalChatHome({
           {isHost && (
             <button
               onClick={onOpenHostDashboard}
-              className="w-full sm:w-auto py-3 px-5 btn-game-purple font-game font-black text-xs tracking-wider rounded-2xl shadow-md flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto py-3 px-5 btn-game-purple font-game font-black text-xs tracking-wider rounded-2xl shadow-lg flex items-center justify-center gap-2 cursor-pointer"
             >
               <Crown className="w-3.5 h-3.5 fill-current" />
               <span>HOST & ADMIN PANEL</span>
@@ -111,23 +111,23 @@ export function GlobalChatHome({
       </div>
 
       {/* Live Global Chat Box */}
-      <div className="flex-1 flex flex-col bg-white dark:bg-[#151B33] border-2 border-indigo-100 dark:border-indigo-900/60 rounded-3xl overflow-hidden shadow-[0_12px_24px_rgba(15,23,42,0.06)] dark:shadow-[0_16px_32px_rgba(0,0,0,0.35)] transition-colors duration-300">
+      <div className="flex-1 flex flex-col bg-[#0b1022]/85 backdrop-blur-xl border border-slate-700/70 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.65)] transition-colors duration-300">
         {/* Chat Header */}
-        <div className="px-5 py-3.5 bg-slate-50 dark:bg-[#10152B] border-b-2 border-indigo-100 dark:border-indigo-950 flex flex-wrap items-center justify-between gap-2">
+        <div className="px-5 py-3.5 bg-[#0e1428]/90 backdrop-blur-md border-b border-slate-800 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-rose-500/10 dark:bg-rose-500/20 text-rose-500 flex items-center justify-center">
+            <div className="w-6 h-6 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center">
               <MessageSquare className="w-3.5 h-3.5" />
             </div>
-            <span className="font-game font-black text-xs sm:text-sm tracking-wide uppercase text-slate-800 dark:text-slate-100">
+            <span className="font-game font-black text-xs sm:text-sm tracking-wide uppercase text-white">
               LOBBY CHAT
             </span>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 text-[11px] font-game font-bold text-slate-500 dark:text-slate-400">
+            <div className="flex items-center gap-1.5 text-[11px] font-game font-bold text-slate-400">
               <span>All Players</span>
               <span aria-hidden="true">·</span>
-              <span className="text-emerald-500 dark:text-emerald-400 flex items-center gap-1">
+              <span className="text-emerald-400 flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 LIVE
               </span>
@@ -215,10 +215,10 @@ export function GlobalChatHome({
                         onClick={() => openUserProfile(msg.senderUsername)}
                         className={`font-game font-bold hover:underline cursor-pointer text-left ${
                           isSenderHost
-                            ? 'text-amber-600 dark:text-amber-400 flex items-center gap-1'
+                            ? 'text-amber-400 flex items-center gap-1'
                             : isMe
-                            ? 'text-rose-600 dark:text-rose-400'
-                            : 'text-slate-700 dark:text-slate-300'
+                            ? 'text-rose-400'
+                            : 'text-slate-300'
                         }`}
                         title={`View @${msg.senderUsername}'s profile`}
                       >
@@ -226,13 +226,13 @@ export function GlobalChatHome({
                         {msg.senderUsername}
                         {isSenderHost && ' (Host)'}
                       </button>
-                      <span className="text-[10px] text-slate-400 dark:text-slate-500 tabular-nums font-mono">
+                      <span className="text-[10px] text-slate-400 tabular-nums font-mono">
                         {formatTime(msg.timestamp)}
                       </span>
                       {isHost && (
                         <button
                           onClick={() => deleteGlobalChat(msg.id)}
-                          className="p-1 text-slate-400 hover:text-rose-500 rounded hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors cursor-pointer"
+                          className="p-1 text-slate-500 hover:text-rose-400 rounded hover:bg-rose-950/40 transition-colors cursor-pointer"
                           title="Delete this message (Host only)"
                         >
                           <Trash2 className="w-3 h-3" />
@@ -242,12 +242,12 @@ export function GlobalChatHome({
 
                     {/* Speech Bubble */}
                     <div
-                      className={`px-4 py-2.5 rounded-3xl text-sm leading-relaxed shadow-xs ${
+                      className={`px-4 py-2.5 rounded-3xl text-sm leading-relaxed shadow-sm ${
                         isMe
-                          ? 'bg-gradient-to-r from-rose-500 to-rose-600 text-white rounded-br-sm'
+                          ? 'bg-gradient-to-r from-rose-600 to-rose-700 text-white rounded-br-sm border border-rose-500/30'
                           : isSenderHost
-                          ? 'bg-amber-100 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-800 text-amber-950 dark:text-amber-100 rounded-bl-sm'
-                          : 'bg-slate-100 dark:bg-[#1E2545] border border-slate-200 dark:border-indigo-900/60 text-slate-800 dark:text-slate-100 rounded-bl-sm'
+                          ? 'bg-amber-950/70 border border-amber-600/70 text-amber-100 rounded-bl-sm shadow-md'
+                          : 'bg-[#151c36]/90 border border-slate-700/70 text-slate-100 rounded-bl-sm backdrop-blur-sm'
                       }`}
                     >
                       <p className="whitespace-pre-wrap break-words">{msg.content}</p>
@@ -263,14 +263,14 @@ export function GlobalChatHome({
         {/* Chat Input Form */}
         <form
           onSubmit={handleSendMessage}
-          className="p-3 sm:p-4 bg-slate-50 dark:bg-[#10152B] border-t-2 border-indigo-100 dark:border-indigo-950 flex items-center gap-2"
+          className="p-3 sm:p-4 bg-[#0a0f20]/90 backdrop-blur-md border-t border-slate-800/90 flex items-center gap-2"
         >
           <input
             type="text"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             placeholder="Type a message to everyone in the lobby..."
-            className="flex-1 px-4 py-2.5 bg-white dark:bg-[#161B33] border-2 border-slate-200 dark:border-indigo-950 rounded-2xl text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
+            className="flex-1 px-4 py-2.5 bg-[#121932] border border-slate-700 rounded-2xl text-sm text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 transition-colors shadow-inner"
           />
           <button
             type="submit"

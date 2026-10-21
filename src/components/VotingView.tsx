@@ -80,8 +80,8 @@ export function VotingView() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-6 sm:py-8 space-y-6 animate-pop-in">
       {/* Cartoon Party Voting Header */}
-      <div className="text-center py-6 sm:py-8 bg-white dark:bg-[#151B33] border-2 border-indigo-100 dark:border-indigo-900/60 rounded-3xl p-6 shadow-[0_12px_24px_rgba(15,23,42,0.06)] dark:shadow-[0_16px_32px_rgba(0,0,0,0.35)] relative overflow-hidden transition-colors duration-300">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-rose-50 dark:bg-rose-950/60 border-2 border-rose-200 dark:border-rose-800 rounded-full text-xs font-game font-bold text-rose-600 dark:text-rose-300 mb-2 shadow-xs">
+      <div className="text-center py-6 sm:py-8 bg-[#0b1022]/85 backdrop-blur-xl border border-slate-700/70 rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.65)] relative overflow-hidden transition-colors duration-300">
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-rose-950/70 border border-rose-700/80 rounded-full text-xs font-game font-bold text-rose-300 mb-2 shadow-md">
           <Vote className="w-3.5 h-3.5 text-rose-500" />
           <span>Final Verdict</span>
           <span aria-hidden="true">·</span>

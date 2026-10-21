@@ -18,6 +18,7 @@ import { WinnerResultView } from './components/WinnerResultView.js';
 import { UserProfileModal } from './components/UserProfileModal.js';
 import { UserSearchModal } from './components/UserSearchModal.js';
 import { FriendsModal } from './components/FriendsModal.js';
+import { SpyBackground } from './components/SpyBackground.js';
 import { Gamepad2, Sparkles } from 'lucide-react';
 
 function MainApp() {
@@ -74,13 +75,14 @@ function MainApp() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-[#EEF2FF] dark:bg-[#0C1021] flex flex-col items-center justify-center text-slate-600 dark:text-slate-300 gap-4 transition-colors duration-300">
-        <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-rose-500 via-amber-400 to-cyan-400 p-0.5 shadow-xl animate-bounce-subtle">
-          <div className="w-full h-full bg-white dark:bg-[#151B33] rounded-[22px] flex items-center justify-center text-rose-500">
+      <div className="min-h-screen bg-[#050814] flex flex-col items-center justify-center text-slate-300 gap-4 relative overflow-hidden">
+        <SpyBackground />
+        <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-rose-500 via-amber-400 to-cyan-400 p-0.5 shadow-2xl animate-bounce-subtle z-10">
+          <div className="w-full h-full bg-[#0E1428]/90 rounded-[22px] flex items-center justify-center text-rose-500">
             <Gamepad2 className="w-8 h-8 animate-pulse text-rose-500" />
           </div>
         </div>
-        <div className="flex items-center gap-2 font-game font-black text-sm tracking-widest uppercase text-slate-700 dark:text-slate-200">
+        <div className="flex items-center gap-2 font-game font-black text-sm tracking-widest uppercase text-slate-200 z-10 drop-shadow-md">
           <Sparkles className="w-4 h-4 text-amber-500 fill-amber-400 animate-spin" />
           <span>CONNECTING TO SPY GAME LOBBY...</span>
         </div>
@@ -124,13 +126,14 @@ function MainApp() {
   const isProfileRequired = !user.isProfileCompleted || showProfileCompletion;
 
   return (
-    <div className="min-h-screen bg-[#EEF2FF] dark:bg-[#0C1021] text-slate-900 dark:text-slate-100 flex flex-col antialiased selection:bg-rose-500/30 selection:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-transparent text-slate-100 flex flex-col antialiased selection:bg-rose-500/30 selection:text-white relative">
+      <SpyBackground />
       <Navbar
         onOpenHostDashboard={() => setIsHostDashboardOpen(true)}
         onOpenProfileModal={() => setIsProfileModalOpen(true)}
       />
 
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         {!room ? (
           <GlobalChatHome
             onOpenJoinModal={() => setIsJoinModalOpen(true)}

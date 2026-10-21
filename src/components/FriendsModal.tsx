@@ -75,19 +75,19 @@ export function FriendsModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white dark:bg-[#151B33] border-2 border-indigo-200 dark:border-indigo-900 rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl relative animate-pop-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
+      <div className="bg-[#0b1022]/95 backdrop-blur-2xl border border-slate-700/80 rounded-3xl max-w-lg w-full overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.85)] relative animate-pop-in">
         {/* Header */}
-        <div className="px-5 py-4 bg-slate-50 dark:bg-[#10152B] border-b-2 border-indigo-100 dark:border-indigo-950 flex items-center justify-between">
+        <div className="px-5 py-4 bg-[#0f162e] border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-500 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
               <Users className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="font-game font-black text-sm uppercase text-slate-800 dark:text-white leading-tight">
-                Friends Hub (বন্ধু)
+              <h2 className="font-game font-black text-sm uppercase text-white leading-tight">
+                Friends Hub
               </h2>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400">
+              <p className="text-[11px] text-slate-400">
                 Manage your friendships and incoming requests
               </p>
             </div>

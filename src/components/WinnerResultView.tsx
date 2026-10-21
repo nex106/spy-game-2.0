@@ -67,10 +67,10 @@ export function WinnerResultView() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 sm:py-12 space-y-6 animate-pop-in">
       <div
-        className={`rounded-3xl p-6 sm:p-10 border-3 backdrop-blur-xl shadow-2xl text-center space-y-6 relative overflow-hidden transition-colors duration-300 ${
+        className={`rounded-3xl p-6 sm:p-10 border-2 backdrop-blur-2xl shadow-[0_24px_60px_rgba(0,0,0,0.8)] text-center space-y-6 relative overflow-hidden transition-colors duration-300 ${
           isCitizenWin
-            ? 'bg-gradient-to-b from-emerald-50 via-white to-teal-50 dark:from-[#112423] dark:via-[#151B33] dark:to-[#0C1021] border-emerald-400 dark:border-emerald-500/60 shadow-emerald-200/50 dark:shadow-emerald-950/40'
-            : 'bg-gradient-to-b from-rose-50 via-white to-pink-50 dark:from-[#26101B] dark:via-[#151B33] dark:to-[#0C1021] border-rose-400 dark:border-rose-500/60 shadow-rose-200/50 dark:shadow-rose-950/40'
+            ? 'bg-[#071715]/90 border-emerald-500/60 text-white'
+            : 'bg-[#180712]/90 border-rose-500/60 text-white'
         }`}
       >
         {/* Victory Cartoon Emblem */}

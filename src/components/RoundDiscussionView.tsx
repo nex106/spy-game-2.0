@@ -74,10 +74,10 @@ export function RoundDiscussionView({ roundNumber }: RoundDiscussionViewProps) {
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8 space-y-6 animate-pop-in">
       {/* Cartoon Party Discussion Header with Server Synced Timer */}
-      <div className="bg-white dark:bg-[#151B33] border-2 border-indigo-100 dark:border-indigo-900/60 rounded-3xl p-6 sm:p-7 shadow-[0_12px_24px_rgba(15,23,42,0.06)] dark:shadow-[0_16px_32px_rgba(0,0,0,0.35)] flex flex-col md:flex-row items-center justify-between gap-6 transition-colors duration-300">
+      <div className="bg-[#0b1022]/85 backdrop-blur-xl border border-slate-700/70 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.65)] flex flex-col md:flex-row items-center justify-between gap-6 transition-colors duration-300">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-50 dark:bg-[#1C2344] border-2 border-indigo-200 dark:border-indigo-800 rounded-full text-xs font-game font-bold text-indigo-600 dark:text-indigo-300 mb-2 shadow-xs">
-            <Gamepad2 className="w-3.5 h-3.5 text-cyan-500" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#10172e]/80 border border-indigo-700/60 rounded-full text-xs font-game font-bold text-indigo-300 mb-2 shadow-md">
+            <Gamepad2 className="w-3.5 h-3.5 text-cyan-400" />
             <span>Room Code: {room.code}</span>
             <span aria-hidden="true">·</span>
             <span className="text-amber-500 font-extrabold uppercase">

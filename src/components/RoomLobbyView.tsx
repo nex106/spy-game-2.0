@@ -192,21 +192,21 @@ export function RoomLobbyView() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-6 sm:py-8 space-y-6 animate-pop-in">
       {/* Cartoon Room Code Ticket Header */}
-      <div className="bg-white dark:bg-[#151B33] border-2 border-indigo-100 dark:border-indigo-900/70 rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden shadow-[0_12px_24px_rgba(15,23,42,0.06)] dark:shadow-[0_16px_32px_rgba(0,0,0,0.35)] transition-colors duration-300">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-50 dark:bg-[#1C2344] border-2 border-indigo-200 dark:border-indigo-800 rounded-full text-xs font-game font-bold text-indigo-600 dark:text-indigo-300 mb-3 shadow-xs">
-          <Gamepad2 className="w-3.5 h-3.5 text-cyan-500" />
+      <div className="bg-[#0b1022]/85 backdrop-blur-xl border border-slate-700/70 rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.65)] transition-colors duration-300">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#10172e]/80 border border-indigo-700/60 rounded-full text-xs font-game font-bold text-indigo-300 mb-3 shadow-md">
+          <Gamepad2 className="w-3.5 h-3.5 text-cyan-400" />
           <span>Party Room Lobby</span>
           <span aria-hidden="true">·</span>
-          <span className="text-emerald-500 font-bold">READY</span>
+          <span className="text-emerald-400 font-bold">READY</span>
         </div>
 
-        <h2 className="text-xs uppercase tracking-widest font-game font-bold text-slate-500 dark:text-slate-400">
+        <h2 className="text-xs uppercase tracking-widest font-game font-bold text-slate-400">
           ROOM PASSCODE
         </h2>
 
         {/* Big 5-Character Code Ticket */}
-        <div className="mt-2 inline-flex items-center gap-3 bg-indigo-50/80 dark:bg-[#0E1326] border-2 border-indigo-200 dark:border-indigo-950 rounded-2xl px-6 py-3 shadow-inner">
-          <span className="font-mono text-3xl sm:text-5xl font-black tracking-[0.25em] text-cyan-600 dark:text-cyan-400 drop-shadow-xs">
+        <div className="mt-2 inline-flex items-center gap-3 bg-[#060a17]/90 border border-cyan-500/40 rounded-2xl px-6 py-3 shadow-inner">
+          <span className="font-mono text-3xl sm:text-5xl font-black tracking-[0.25em] text-cyan-400 drop-shadow-md">
             {room.code}
           </span>
           <button
@@ -305,11 +305,11 @@ export function RoomLobbyView() {
 
       {/* Host Controls Panel: Role Assignment & Secret Word */}
       {isHost ? (
-        <div className="bg-white dark:bg-[#151B33] border-2 border-amber-300 dark:border-amber-900/60 rounded-3xl p-6 shadow-[0_12px_24px_rgba(245,158,11,0.06)] dark:shadow-[0_16px_32px_rgba(0,0,0,0.35)] space-y-5 transition-colors duration-300">
-          <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-indigo-950">
+        <div className="bg-[#0b1022]/85 backdrop-blur-xl border border-amber-500/40 rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.65)] space-y-5 transition-colors duration-300">
+          <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800">
             <div className="flex items-center gap-2">
               <Crown className="w-5 h-5 text-amber-500 fill-amber-400" />
-              <h3 className="text-sm font-game font-black text-slate-900 dark:text-white uppercase tracking-wider">
+              <h3 className="text-sm font-game font-black text-white uppercase tracking-wider">
                 HOST GAME SETUP
               </h3>
             </div>
@@ -608,10 +608,10 @@ export function RoomLobbyView() {
       )}
 
       {/* Players List Grid */}
-      <div className="bg-white dark:bg-[#151B33] border-2 border-indigo-100 dark:border-indigo-900/60 rounded-3xl p-6 shadow-[0_12px_24px_rgba(15,23,42,0.06)] dark:shadow-[0_16px_32px_rgba(0,0,0,0.35)] transition-colors duration-300">
+      <div className="bg-[#0b1022]/85 backdrop-blur-xl border border-slate-700/70 rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.65)] transition-colors duration-300">
         <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2 text-xs font-game font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider">
-            <Users className="w-4 h-4 text-indigo-400" />
+          <div className="flex items-center gap-2 text-xs font-game font-bold text-white uppercase tracking-wider">
+            <Users className="w-4 h-4 text-cyan-400" />
             <span>Players in Room ({room.players.length})</span>
           </div>
           <div className="flex items-center gap-2">

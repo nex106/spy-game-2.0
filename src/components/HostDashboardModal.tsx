@@ -191,18 +191,18 @@ export function HostDashboardModal({ isOpen, onClose }: HostDashboardModalProps)
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 dark:bg-black/85 backdrop-blur-md animate-pop-in transition-colors duration-300"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-pop-in transition-colors duration-300"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           onClose();
         }
       }}
     >
-      <div className="w-full max-w-2xl bg-white dark:bg-[#151B33] border-3 border-amber-300 dark:border-amber-900/80 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] transition-colors duration-300">
+      <div className="w-full max-w-2xl bg-[#0b1022]/95 backdrop-blur-2xl border border-amber-500/40 rounded-3xl shadow-[0_24px_60px_rgba(0,0,0,0.85)] overflow-hidden flex flex-col max-h-[90vh] transition-colors duration-300">
         {/* Header */}
-        <div className="px-6 py-4 bg-amber-50/70 dark:bg-[#10152B] border-b-2 border-amber-200 dark:border-indigo-950 flex items-center justify-between">
-          <div className="flex items-center gap-2 text-sm font-game font-black text-amber-800 dark:text-amber-300 uppercase tracking-wider">
-            <Crown className="w-5 h-5 text-amber-500 fill-amber-400" />
+        <div className="px-6 py-4 bg-[#0f162e] border-b border-slate-800 flex items-center justify-between">
+          <div className="flex items-center gap-2 text-sm font-game font-black text-amber-400 uppercase tracking-wider">
+            <Crown className="w-5 h-5 text-amber-400 fill-amber-400" />
             <span>HOST & ADMIN DASHBOARD</span>
           </div>
           <div className="flex items-center gap-2">

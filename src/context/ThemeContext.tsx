@@ -14,14 +14,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => {
     if (typeof window === 'undefined') return 'dark';
     const saved = localStorage.getItem('spy_game_theme');
-    if (saved === 'light' || saved === 'dark') {
+    if (saved === 'dark' || saved === 'light') {
       return saved;
     }
-    // Check system preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      return 'light';
-    }
-    return 'dark';
+    return 'dark'; // Always default to dark for the cinematic Spy Game theme
   });
 
   useEffect(() => {

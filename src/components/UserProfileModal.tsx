@@ -169,8 +169,8 @@ export function UserProfileModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white dark:bg-[#141A33] border-2 border-indigo-200 dark:border-indigo-900 rounded-3xl max-w-md w-full overflow-hidden shadow-2xl relative animate-pop-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
+      <div className="bg-[#0b1022]/95 backdrop-blur-2xl border border-slate-700/80 rounded-3xl max-w-md w-full overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.85)] relative animate-pop-in">
         {/* Header background banner */}
         <div className="h-28 bg-gradient-to-r from-rose-500 via-amber-400 to-cyan-500 relative flex items-start justify-end p-3">
           <button
@@ -212,7 +212,7 @@ export function UserProfileModal({
               {/* Avatar + Main Info Floating over Banner */}
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 -mt-12">
                 <div className="flex items-end gap-3.5">
-                  <div className="p-1 bg-white dark:bg-[#141A33] rounded-3xl shadow-md border-2 border-indigo-100 dark:border-indigo-900">
+                  <div className="p-1 bg-[#0b1022] rounded-3xl shadow-md border border-slate-700">
                     <PlayerAvatarBadge
                       username={profileData.user.username}
                       avatarId={profileData.user.avatar}
